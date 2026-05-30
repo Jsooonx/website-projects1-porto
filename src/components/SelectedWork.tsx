@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
+import { WhyUs } from './WhyUs';
 
 export interface Project {
   id: string;
@@ -274,6 +275,9 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject 
           </motion.div>
         ))}
       </motion.div>
+
+      {/* Why Us / Why Me Section */}
+      <WhyUs />
     </section>
   );
 };

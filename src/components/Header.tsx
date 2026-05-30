@@ -1,22 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLenis } from 'lenis/react';
-
-// Helper component for the sliding text roll hover animation (auto-scales without clipping and hides descender/ascender residues)
-const TextRoll: React.FC<{ text: string; className?: string }> = ({ text, className = '' }) => {
-  return (
-    <span className="relative inline-block overflow-hidden pb-[0.1em]">
-      {/* Primary text in normal flow */}
-      <span className={`block transition-transform duration-500 ease-[0.16, 1, 0.3, 1] group-hover:-translate-y-[115%] ${className}`}>
-        {text}
-      </span>
-      {/* Secondary text clone positioned with a buffer gap below */}
-      <span className={`absolute top-[115%] left-0 block w-full transition-transform duration-500 ease-[0.16, 1, 0.3, 1] group-hover:-translate-y-[115%] ${className}`}>
-        {text}
-      </span>
-    </span>
-  );
-};
+import { TextRoll } from './TextRoll';
 
 export const Header: React.FC = () => {
   const [time, setTime] = useState<string>('');
