@@ -223,7 +223,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject 
       <motion.div 
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, margin: '-100px 0px -100px 0px' }}
+        viewport={{ once: true, margin: '-100px 0px -100px 0px' }}
         variants={containerVariants}
         className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-3 lg:gap-4 w-full"
       >

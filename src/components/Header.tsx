@@ -53,8 +53,9 @@ export const Header: React.FC = () => {
     { title: 'Home', number: '(01)', href: '#' },
     { title: 'About', number: '(02)', href: '#about' },
     { title: 'Projects', number: '(03)', href: '#projects' },
-    { title: 'Blog', number: '(04)', href: '#blog' },
-    { title: 'Contact', number: '(05)', href: '#contact' },
+    { title: 'Services', number: '(04)', href: '#services' },
+    { title: 'Blog', number: '(05)', href: '#blog' },
+    { title: 'Contact', number: '(06)', href: '#contact' },
   ];
 
   return (
@@ -95,6 +96,9 @@ export const Header: React.FC = () => {
                     </a>
                     <a href="#projects" onClick={(e) => scrollToSection(e, '#projects')} className="group hover:text-white transition-colors duration-300 text-[12.5px] font-normal text-neutral-400">
                       <TextRoll text="Projects" />
+                    </a>
+                    <a href="#services" onClick={(e) => scrollToSection(e, '#services')} className="group hover:text-white transition-colors duration-300 text-[12.5px] font-normal text-neutral-400">
+                      <TextRoll text="Services" />
                     </a>
                     <a href="#blog" onClick={(e) => scrollToSection(e, '#blog')} className="group hover:text-white transition-colors duration-300 text-[12.5px] font-normal text-neutral-400">
                       <TextRoll text="Blog" />

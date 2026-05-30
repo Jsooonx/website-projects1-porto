@@ -7,7 +7,7 @@ export const HeroImageCard: React.FC = () => {
       <motion.div
         initial={{ opacity: 0, y: 60, filter: 'blur(8px)' }}
         whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        viewport={{ once: false, margin: '-100px 0px -100px 0px' }}
+        viewport={{ once: true, margin: '-100px 0px -100px 0px' }}
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
         className="w-full relative rounded-2xl md:rounded-[2rem] overflow-hidden aspect-[16/10] md:aspect-[16/9] border border-neutral-900/60 shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
       >

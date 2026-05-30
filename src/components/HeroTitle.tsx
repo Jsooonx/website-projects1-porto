@@ -6,7 +6,7 @@ export const HeroTitle: React.FC = () => {
     <motion.section
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: '-50px 0px -50px 0px' }}
+      viewport={{ once: true, margin: '-50px 0px -50px 0px' }}
       className="px-1.5 md:px-3 py-10 md:py-16 flex flex-col md:flex-row md:items-end justify-between gap-6 w-full select-none"
     >
       {/* Massive Title */}

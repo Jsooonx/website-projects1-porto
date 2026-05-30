@@ -9,6 +9,7 @@ import { LogoBar } from './components/LogoBar';
 import { HeroImageCard } from './components/HeroImageCard';
 import { SelectedWork } from './components/SelectedWork';
 import { About } from './components/About';
+import { Services } from './components/Services';
 import { ProjectDetail } from './components/ProjectDetail';
 import { CustomCursor } from './components/CustomCursor';
 
@@ -133,25 +134,29 @@ function AppContent() {
   return (
     <div className="bg-black text-white min-h-screen font-sans flex flex-col items-center w-full selection:bg-white selection:text-black">
       <CustomCursor />
-      <div className="w-full max-w-[98vw] xl:max-w-[1560px] flex flex-col items-center">
-        {activeProjectId ? (
+      <div className="w-full max-w-[98vw] xl:max-w-[1560px] flex flex-col items-center relative">
+        {activeProjectId && (
           <ProjectDetail
             key={`project-${activeProjectId}`}
             projectId={activeProjectId}
             onBack={navigateBack}
           />
-        ) : (
-          <div className="w-full flex flex-col items-center">
-            <Header />
-            <main className="w-full flex flex-col">
-              <HeroTitle />
-              <LogoBar />
-              <HeroImageCard />
-              <About />
-              <SelectedWork onNavigateToProject={navigateToProject} />
-            </main>
-          </div>
         )}
+        
+        <div 
+          className="w-full flex flex-col items-center"
+          style={{ display: activeProjectId ? 'none' : 'flex' }}
+        >
+          <Header />
+          <main className="w-full flex flex-col">
+            <HeroTitle />
+            <LogoBar />
+            <HeroImageCard />
+            <About />
+            <SelectedWork onNavigateToProject={navigateToProject} />
+            <Services />
+          </main>
+        </div>
       </div>
 
       {/* ── Full-screen page-transition overlay ── */}

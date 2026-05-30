@@ -217,7 +217,7 @@ export const About: React.FC = () => {
       id="about"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: '-150px 0px -150px 0px' }}
+      viewport={{ once: true, margin: '-150px 0px -150px 0px' }}
       variants={containerVariants}
       className="w-full px-1.5 md:px-3 py-20 md:py-28 border-t border-neutral-900/60 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch overflow-hidden select-none font-sans"
     >
@@ -324,7 +324,7 @@ export const About: React.FC = () => {
         <motion.div 
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, margin: '-80px' }}
+          viewport={{ once: true, margin: '-80px' }}
           variants={imageFlipVariants}
           style={{ transformStyle: 'preserve-3d' }}
           className="relative w-full max-w-[480px] lg:max-w-none aspect-[4/5] rounded-2xl cursor-pointer"

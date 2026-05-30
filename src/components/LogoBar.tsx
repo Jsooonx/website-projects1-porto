@@ -57,7 +57,7 @@ export const LogoBar: React.FC = () => {
     <motion.section 
       initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
       whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: false, margin: '-50px 0px -50px 0px' }}
+      viewport={{ once: true, margin: '-50px 0px -50px 0px' }}
       transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       className="w-full px-1.5 md:px-3 py-6 border-t border-b border-neutral-900/60 flex flex-col md:flex-row md:items-center justify-between gap-6 overflow-hidden select-none"
     >

@@ -43,7 +43,7 @@ export const WhyUs: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.06,
         delayChildren: 0.1,
       },
     },
@@ -65,7 +65,7 @@ export const WhyUs: React.FC = () => {
       filter: 'blur(0px)',
       opacity: 1,
       y: 0,
-      transition: { duration: 1.4, ease: [0.16, 1, 0.3, 1] },
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
     },
   };
 
@@ -106,7 +106,7 @@ export const WhyUs: React.FC = () => {
     <motion.div
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, margin: '-100px' }}
+      viewport={{ once: true, margin: '-100px' }}
       variants={containerVariants}
       className="w-full mt-24 pt-20 border-t border-neutral-900/60 flex flex-col font-sans select-none"
     >
