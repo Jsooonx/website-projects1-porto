@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { TextRoll } from './TextRoll';
+import { Pricing } from './Pricing';
 
 interface ServiceItem {
   id: string;
@@ -206,10 +207,18 @@ export const Services: React.FC = () => {
 
       {/* See pricing CTA button at bottom left */}
       <div className="w-full flex justify-start">
-        <button className="group bg-white text-black font-sans text-xs font-semibold px-6 py-3 rounded-full hover:bg-black hover:text-white transition-colors duration-300 shadow-[0_4px_12px_rgba(255,255,255,0.05)]">
+        <button 
+          onClick={() => {
+            const el = document.getElementById('pricing-block');
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
+          className="group bg-white text-black font-sans text-xs font-semibold px-6 py-3 rounded-full hover:bg-black hover:text-white transition-colors duration-300 shadow-[0_4px_12px_rgba(255,255,255,0.05)]"
+        >
           <TextRoll text="See pricing +" className="font-semibold text-xs" />
         </button>
       </div>
+
+      <Pricing />
     </motion.section>
   );
 };
