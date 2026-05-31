@@ -1,73 +1,28 @@
-# React + TypeScript + Vite
+# Jsooonx® - Premium Creative Agency Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Jsooonx® is a high-fidelity, premium agency portfolio website designed with a focus on editorial aesthetics, minimal structure (Kanso-inspired), and micro-interaction details. It serves as a showcase of elite web design and interactive front-end development capabilities.
 
-Currently, two official plugins are available:
+## Tech Stack & Architecture
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Core**: [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite](https://vite.dev/) for high-performance bundling and near-instant Hot Module Replacement (HMR)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) for a sleek utility-first visual structure
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) for hardware-accelerated spring animations, page transitions, and staggered reveals
+- **Scroll Engine**: [Lenis](https://lenis.darkroom.engineering/) for a fluid, premium smooth scrolling experience
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Disclaimer
 
-## Expanding the ESLint configuration
+This is a personal portfolio project. **You may not clone or copy this website verbatim to use directly as your own personal or commercial brand identity.** However, feel free to inspect the codebase, study the components and architecture, copy specific animation patterns or code snippets, and modify them for your own projects. 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Credits
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Jsooonx Credits
+- **Jsooonx** - Concept, design system, and full implementation.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Additional Credits
+- **Kanso** - [https://kanso-dark.framer.media/](https://kanso-dark.framer.media/)
+- **Fabrica Studio** - [https://fabrica.framer.media/?utm_source=framer](https://fabrica.framer.media/?utm_source=framer)
