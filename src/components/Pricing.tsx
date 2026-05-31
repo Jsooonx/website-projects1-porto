@@ -4,6 +4,7 @@ import { TextRoll } from './TextRoll';
 
 export const Pricing: React.FC = () => {
   const [addOnEnabled, setAddOnEnabled] = useState(false);
+  const [lineDrawn, setLineDrawn] = useState(false);
 
   // Prices
   const basePrice = 2490;
@@ -155,15 +156,28 @@ export const Pricing: React.FC = () => {
 
             {/* Bottom Row inside card */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pt-6 mt-10 relative">
-              {/* Animated line with glow */}
-              <motion.div
-                initial={{ width: '0%' }}
-                whileInView={{ width: '100%' }}
-                viewport={{ once: true }}
-                transition={{ duration: 2.0, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute top-0 left-0 h-px bg-neutral-700"
-                style={{ boxShadow: '0 0 6px 1px rgba(255, 255, 255, 0.15)' }}
-              />
+              {/* Animated line: draws in, then glow sweeps loop */}
+              <div className="absolute top-0 left-0 w-full h-px overflow-hidden">
+                <motion.div
+                  initial={{ width: '0%' }}
+                  whileInView={{ width: '100%' }}
+                  viewport={{ once: true, margin: '-200px' }}
+                  transition={{ duration: 1.6, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  onAnimationComplete={() => setLineDrawn(true)}
+                  className="h-full bg-neutral-700"
+                />
+                {lineDrawn && (
+                  <motion.div
+                    className="absolute top-0 h-full w-[60%]"
+                    style={{
+                      background: 'linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 15%, rgba(255,255,255,0.5) 40%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.5) 60%, rgba(255,255,255,0.25) 85%, transparent 100%)',
+                      boxShadow: '0 0 18px 6px rgba(255,255,255,0.35)',
+                    }}
+                    animate={{ x: ['-60%', '160%'] }}
+                    transition={{ duration: 4, ease: 'easeInOut', repeat: Infinity, repeatDelay: 2.5 }}
+                  />
+                )}
+              </div>
               <div className="flex flex-col">
                 <span className="text-neutral-500 font-mono text-[10px] md:text-xs uppercase tracking-wider">
                   Delivery time

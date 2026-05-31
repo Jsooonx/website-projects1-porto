@@ -82,7 +82,7 @@ export const Services: React.FC = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.18,
+        staggerChildren: 0.35,
         delayChildren: 0.1,
       },
     },

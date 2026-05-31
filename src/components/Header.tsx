@@ -146,7 +146,7 @@ export const Header: React.FC = () => {
                 animate={{ height: 'auto', opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="overflow-hidden"
+                className="overflow-y-auto overflow-x-hidden max-h-[80vh] lg:max-h-[none] lg:overflow-visible no-scrollbar"
               >
                 <div className="border-t border-neutral-900/60 grid grid-cols-1 lg:grid-cols-2 gap-10 py-8 items-center">
                   

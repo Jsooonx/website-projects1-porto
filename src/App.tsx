@@ -15,6 +15,7 @@ import { BlogList } from './components/BlogList';
 import { BlogDetail } from './components/BlogDetail';
 import { ProjectDetail } from './components/ProjectDetail';
 import { CustomCursor } from './components/CustomCursor';
+import { Footer } from './components/Footer';
 
 type NavAction =
   | { type: 'project'; id: string }
@@ -260,7 +261,7 @@ function AppContent() {
         )}
         
         <div 
-          className="w-full flex flex-col items-center"
+          className="w-full flex flex-col items-center bg-black relative z-10 shadow-[0_20px_50px_rgba(0,0,0,0.9)] pb-12"
           style={{ display: (activeProjectId || activeBlogId || activeBlogList) ? 'none' : 'flex' }}
         >
           <Header />
@@ -274,6 +275,14 @@ function AppContent() {
             <Blog onNavigateToBlog={navigateToBlog} onNavigateToBlogList={navigateToBlogList} />
           </main>
         </div>
+      </div>
+
+      {/* Full-bleed Footer — sticky reveal parallax underneath Blog */}
+      <div 
+        className="w-full sticky bottom-0 z-0"
+        style={{ display: (activeProjectId || activeBlogId || activeBlogList) ? 'none' : 'flex' }}
+      >
+        <Footer />
       </div>
 
       {/* ── Full-screen page-transition overlay ── */}

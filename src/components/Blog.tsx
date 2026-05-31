@@ -297,6 +297,16 @@ export const Blog: React.FC<BlogProps> = ({ onNavigateToBlog, onNavigateToBlogLi
       className="w-full px-1.5 md:px-3 py-20 md:py-28 border-t border-neutral-900/60 flex flex-col select-none"
     >
       {/* Header Row */}
+      <div className="flex items-center justify-between w-full mb-8">
+        <span className="text-neutral-400 font-mono text-xs md:text-sm tracking-wider">
+          /Blog
+        </span>
+        <span className="text-neutral-500 font-mono text-xs md:text-sm tracking-wider">
+          (08)
+        </span>
+      </div>
+
+      {/* Title Row */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 w-full mb-16">
         <div className="max-w-2xl">
           <h2 className="text-[44px] md:text-[56px] lg:text-[68px] font-sans font-bold tracking-tight leading-[1.05] text-white">
