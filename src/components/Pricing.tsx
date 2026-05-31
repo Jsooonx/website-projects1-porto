@@ -130,28 +130,7 @@ export const Pricing: React.FC = () => {
                 </div>
               </div>
 
-              {/* Template promo badge */}
-              <div className="bg-neutral-900/60 border border-neutral-800/80 rounded-2xl p-3.5 flex items-center gap-3 w-fit self-start md:self-auto">
-                <img
-                  src="/sandwich_bg.png"
-                  alt="Fabrica template preview thumbnail"
-                  className="w-10 h-10 rounded-lg object-cover grayscale opacity-80"
-                />
-                <div className="flex flex-col mr-1">
-                  <span className="text-white font-sans font-semibold text-[11px] leading-tight">
-                    Fabrica® Template
-                  </span>
-                  <span className="text-neutral-500 font-sans text-[10px] mt-0.5">
-                    from $129
-                  </span>
-                </div>
-                <div className="w-6 h-6 rounded-lg bg-neutral-950 flex items-center justify-center border border-neutral-800 text-neutral-400">
-                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <line x1="7" y1="17" x2="17" y2="7" />
-                    <polyline points="7 7 17 7 17 17" />
-                  </svg>
-                </div>
-              </div>
+              {/* No template promo badge */}
             </div>
 
             {/* Bottom Row inside card */}
