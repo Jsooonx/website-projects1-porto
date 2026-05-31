@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { TextRoll } from './TextRoll';
