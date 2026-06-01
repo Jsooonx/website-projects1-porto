@@ -245,13 +245,13 @@ export const WhyUs: React.FC = () => {
           variants={itemVariants}
           className="lg:col-span-6 bg-neutral-950 border border-neutral-900 rounded-3xl overflow-hidden relative group/card flex flex-col justify-between p-6 md:p-8 min-h-[380px] lg:min-h-0"
         >
-          {/* Silk Wave Backdrop Pattern */}
+          {/* Testimonial Backdrop Pattern */}
           <img
             src="/why_testimonial_bg.png"
-            alt="Dark Silk Waves Backdrop texture"
-            className="absolute inset-0 w-full h-full object-cover grayscale opacity-[0.25] group-hover/card:scale-[1.01] transition-all duration-[1200ms] ease-out"
+            alt="Testimonial Background"
+            className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover/card:scale-[1.02] group-hover/card:opacity-100 transition-all duration-[1000ms] ease-out"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/85 to-neutral-950/70 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/70 pointer-events-none" />
 
           {/* Top Row: Avatar Stack & CTA Buttons */}
           <div className="relative z-10 flex flex-wrap gap-4 items-center justify-between w-full mb-8">
@@ -272,15 +272,7 @@ export const WhyUs: React.FC = () => {
               </span>
             </div>
 
-            {/* Template Promo Action Buttons */}
-            <div className="flex items-center gap-2">
-              <button className="group bg-white text-black font-sans text-[11px] font-semibold px-3 py-1.5 rounded-full hover:bg-black hover:text-white transition-colors duration-300 shadow-sm">
-                <TextRoll text="Buy Template - $99" className="font-semibold text-[11px]" />
-              </button>
-              <button className="group border border-neutral-800 text-white font-sans text-[11px] font-semibold px-3 py-1.5 rounded-full hover:bg-white hover:text-black transition-colors duration-300">
-                <TextRoll text="More Templates" className="font-semibold text-[11px]" />
-              </button>
-            </div>
+
           </div>
 
           {/* Bottom Area: Testimonial & Author Info */}
