@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 import { projectsData } from './SelectedWork';
+import { TextRoll } from './TextRoll';
 
 interface ProjectDetailProps {
   projectId: string;
@@ -22,9 +23,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
         <h2 className="text-2xl font-light mb-4">Project not found</h2>
         <button 
           onClick={onBack}
-          className="px-6 py-2.5 bg-white text-black rounded-full font-medium text-sm"
+          className="group px-6 py-2.5 rounded-full bg-white text-black hover:bg-black hover:text-white transition-colors duration-300 font-medium text-sm border border-white hover:border-black"
         >
-          Go Back
+          <TextRoll text="Go Back" className="font-medium text-sm" />
         </button>
       </div>
     );
@@ -230,9 +231,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
               e.preventDefault();
               onBack();
             }}
-            className="px-6 py-3 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors duration-300 font-sans font-medium text-xs md:text-sm flex items-center gap-1.5 shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+            className="group px-6 py-3 rounded-full bg-white text-black hover:bg-black hover:text-white transition-colors duration-300 font-sans font-medium text-xs md:text-sm flex items-center gap-1.5 border border-white hover:border-black shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
           >
-            ← Back to Selected Work
+            <TextRoll text="← Back to Selected Work" className="font-medium text-xs md:text-sm" />
           </a>
         </div>
       </div>

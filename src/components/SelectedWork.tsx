@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { WhyUs } from './WhyUs';
+import { TextRoll } from './TextRoll';
 
 export interface Project {
   id: string;
@@ -213,9 +214,9 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject 
           <span className="text-neutral-500 font-mono text-xs md:text-sm tracking-wider md:mb-8">(03)</span>
           <a 
             href="#projects"
-            className="px-6 py-3 rounded-full bg-white text-black hover:bg-neutral-200 transition-colors duration-300 font-sans font-medium text-xs md:text-sm flex items-center gap-1.5 shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
+            className="group px-6 py-3 rounded-full bg-white text-black hover:bg-black hover:text-white transition-colors duration-300 font-sans font-medium text-xs md:text-sm flex items-center gap-1.5 border border-white hover:border-black shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
           >
-            View all projects <span className="text-xs font-semibold">+</span>
+            <TextRoll text="View all projects +" className="font-medium text-xs md:text-sm" />
           </a>
         </div>
       </div>
