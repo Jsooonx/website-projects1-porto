@@ -217,8 +217,8 @@ export const Header: React.FC = () => {
                 <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-6 border-t border-neutral-900/60 py-6 text-[12.5px]">
                   {/* Left info */}
                   <div className="flex flex-col space-y-0.5">
-                    <a href="mailto:hello@kanso.studio" className="group text-white transition-colors duration-300 w-fit">
-                      <TextRoll text="hello@kanso.studio" className="font-semibold text-white group-hover:text-neutral-300" />
+                    <a href="mailto:hello@jsooonx.studio" className="group text-white transition-colors duration-300 w-fit">
+                      <TextRoll text="hello@jsooonx.studio" className="font-semibold text-white group-hover:text-neutral-300" />
                     </a>
                     <span className="text-neutral-500 text-[11.5px] select-none">
                       (123) 456-7890

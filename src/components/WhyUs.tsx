@@ -168,7 +168,7 @@ export const WhyUs: React.FC = () => {
           {/* Grayscale Silhouette Image with Subtle Hover Zoom */}
           <img
             src="/why_silhouette.png"
-            alt="Kanso Design Silhouette Portrait"
+            alt="Jsooonx Design Silhouette Portrait"
             className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover:scale-[1.02] group-hover:opacity-100 transition-all duration-[1000ms] ease-out"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/70 pointer-events-none" />
@@ -176,7 +176,7 @@ export const WhyUs: React.FC = () => {
           {/* Top Label */}
           <div className="relative z-10 w-full text-center">
             <span className="text-white font-sans tracking-widest text-[11px] uppercase font-light opacity-90">
-              Kanso®
+              Jsooonx®
             </span>
           </div>
 
@@ -294,7 +294,7 @@ export const WhyUs: React.FC = () => {
 
             {/* Testimonial Quote */}
             <p className="text-neutral-200 font-sans font-light text-sm md:text-base leading-relaxed italic">
-              "Kanso understood our brand better than we did. Their ability to find the essential and express it simply is what sets them apart."
+              "Jsooonx understood our brand better than we did. Their ability to find the essential and express it simply is what sets them apart."
             </p>
 
             {/* Author */}
