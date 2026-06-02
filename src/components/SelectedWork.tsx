@@ -171,9 +171,10 @@ export const projectsData: Project[] = [
 
 interface SelectedWorkProps {
   onNavigateToProject?: (projectId: string) => void;
+  onNavigateToProjectList?: () => void;
 }
 
-export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject }) => {
+export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject, onNavigateToProjectList }) => {
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -213,7 +214,11 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject 
         <div className="flex flex-col items-start md:items-end justify-between md:h-[120px] self-start md:self-auto">
           <span className="text-neutral-500 font-mono text-xs md:text-sm tracking-wider md:mb-8">(03)</span>
           <a 
-            href="#projects"
+            href="#project-list"
+            onClick={(e) => {
+              e.preventDefault();
+              onNavigateToProjectList?.();
+            }}
             className="group px-6 py-3 rounded-full bg-white text-black hover:bg-black hover:text-white transition-colors duration-300 font-sans font-medium text-xs md:text-sm flex items-center gap-1.5 border border-white hover:border-black shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
           >
             <TextRoll text="View all projects +" className="font-medium text-xs md:text-sm" />
