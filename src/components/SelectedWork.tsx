@@ -113,30 +113,87 @@ export const projectsData: Project[] = [
     ]
   },
   {
-    id: 'ephemeral',
-    name: 'Ephemeral',
-    year: '/2025',
-    category: 'Creative Studio',
-    background: '/ephemeral_bg.png',
-    colorTheme: '#1e3a8a', // Deep Blue
+    id: 'warungify',
+    name: 'Warungify',
+    year: '/2026',
+    category: 'Order Management',
+    background: '/projects/warungify/hero.png',
+    colorTheme: '#dc6400', // Terracotta orange from the logo
     logo: (
       <div className="flex items-center gap-3 text-white">
-        <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white border border-white/20 shadow-lg">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
-            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" strokeLinecap="round" />
-            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" strokeLinecap="round" />
-          </svg>
-        </div>
-        <span className="text-2xl font-bold font-sans tracking-tight">Ephemeral</span>
+        <img src="/logo/logo_warungify_upgrade.png" className="w-10 h-10 rounded-xl object-contain shadow-lg" alt="Warungify Logo" />
+        <span className="text-2xl font-bold font-sans tracking-tight">Warungify</span>
       </div>
     ),
-    shortDesc: 'A high-fidelity immersive web platform for an international creative studio, featuring complex webgl transitions.',
-    longDesc: 'Ephemeral is a leading digital creative agency. We collaborated to build their portfolio platform, emphasizing deep immersion, WebGL canvas transitions, and an audio-visual narrative style. The visual structure centers around high-contrast macro imagery and interactive scroll effects.',
-    challenge: 'Visual portfolio elements were getting lost in traditional grid structures. The client wanted an experience that feels alive, responsive, and mirrors their physical gallery installations.',
-    solution: 'We engineered custom shaders to morph project cover images on scroll and mouse movements. Combined with spatialized sound design on interactions, the digital gallery replicates an abstract physical exhibition.',
-    techStack: ['React', 'Three.js', 'WebGL shaders', 'Tailwind CSS'],
-    role: 'Shader Development, Interactive Design, Creative Tech',
-    client: 'Ephemeral Agency'
+    shortDesc: 'A unified operations workspace that transforms unstructured, chat-based WhatsApp orders into organized workflows, automated customer follow-ups, and real-time business insights.',
+    longDesc: 'Warungify is a specialized, mobile-first operations workspace built for independent merchants, home-based businesses, and social media sellers who run their sales channels directly through chat platforms like WhatsApp, Instagram, and TikTok. Rather than forcing merchants to pay high transaction fees to third-party marketplaces or manage confusing, error-prone spreadsheets, Warungify provides a single, fee-free control room to capture orders, track payments, orchestrate packing/shipping workflows, and review comprehensive customer history. To ensure controlled scaling and premium support during its initial launch phase, the platform features a secure, gated beta workflow. Public visitors apply through a landing page waitlist, and the owner reviews and approves sellers in batches via Google Sheets, instantly syncing approved accounts to a Supabase allowlist. The application bridges frictionless social chatting with database-driven operational efficiency, providing a completely responsive interface tailored for both desktop multitasking and fast-paced mobile use.',
+    challenge: 'Social sellers face administrative chaos daily. A typical order cycle involves copying addresses from messy chat messages, manually verifying bank transfers, tracking packing progress on paper, and typing repetitive status updates to buyers. Over time, customer details get lost in chat history, making it impossible to calculate customer lifetime value or execute repeat campaigns. While major e-commerce platforms offer order-tracking tools, they charge heavy commission rates (often 4% to 10% per transaction) and hide customer contact information. On the other hand, maintaining spreadsheets is manual, slow, and does not work well on mobile devices.',
+    solution: 'Warungify resolves these operational bottlenecks through a combination of structured databases, intuitive automation, and intelligent text-parsing features. 1) Magic Paste Order Parser: Merchants copy raw chat messages (containing address, product list, and phone numbers) and paste them into a single field, letting the system tokenize and parse it into structured fields instantly. 2) Operations Dashboard: Tracks active orders, packing queues, and invoices, highlighting bottleneck aging like unpaid orders exceeding 24 hours. 3) Quick WhatsApp Triggers: Generates click-to-chat links pre-loaded with templates to trigger payment reminders, confirmations, and shipment updates directly via WhatsApp. 4) Customer Lifetime CRM: Aggregates history and metrics like total orders and lifetime spending into distinct customer profile cards. 5) Invoicing: Automatically generates sequential daily invoice numbers for paid orders to send professional invoices via WhatsApp.',
+    techStack: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Supabase', 'Row Level Security', 'Lenis'],
+    role: 'Full-Stack Developer, Database Architect & UI/UX Designer',
+    client: 'Warungify Gated Beta',
+    gallery: [
+      {
+        title: 'Hero Landing Experience',
+        description: 'A clean, typography-focused landing experience that outlines the fee-free order control room concept with immediate access to the waitlist.',
+        image: '/projects/warungify/hero.png'
+      },
+      {
+        title: 'Security-Gated Portal Login',
+        description: 'A clean, secure entry point ensuring only beta-approved sellers can access their workspaces and operational tools.',
+        image: '/projects/warungify/login.png'
+      },
+      {
+        title: 'Key Operational Command Dashboard',
+        description: 'Visual command center displaying daily sales, queue status, active orders, and alerting sellers to aging bottlenecks exceeding 24 hours.',
+        image: '/projects/warungify/dashboard.png'
+      },
+      {
+        title: 'Magic Paste Order Parser',
+        description: 'Merchants can paste raw chat messages from customers into a single field, and the custom parser tokenizes it into structured fields instantly.',
+        image: '/projects/warungify/createneworder.png'
+      },
+      {
+        title: 'Active Orders & Workflow Queue',
+        description: 'A structured tracking list categorizing orders into Pending, Packed, and Shipped states for seamless processing.',
+        image: '/projects/warungify/orders.png'
+      },
+      {
+        title: 'Customer Lifetime CRM Profiles',
+        description: 'Aggregates purchasing history, total lifetime value, and historical transaction logs into clean profile cards.',
+        image: '/projects/warungify/customers.png'
+      },
+      {
+        title: 'Interactive WhatsApp Outreach Templates',
+        description: 'Generates customized message triggers allowing merchants to send invoices, payment reminders, and tracking updates with a single click.',
+        image: '/projects/warungify/whatsapptemplate.png'
+      },
+      {
+        title: 'Explore Operational Features',
+        description: 'A detailed breakdown of key platform highlights including raw-text parsing, automated sequence invoicing, and CRM customer metrics.',
+        image: '/projects/warungify/explorepowerfulfeatures.png'
+      },
+      {
+        title: 'Interactive Feature Detail Workspace',
+        description: 'A deeper dive into the specific administrative workflows and operations control cards optimized for daily seller tasks.',
+        image: '/projects/warungify/features.png'
+      },
+      {
+        title: 'Visual Workflow Map (How It Works)',
+        description: 'An intuitive, step-by-step diagram showing the transaction cycle: WhatsApp chat → Magic Paste → Order tracking → Customer dispatch.',
+        image: '/projects/warungify/howitworks.png'
+      },
+      {
+        title: 'Transparent Workspace Pricing Plans',
+        description: 'A premium, straightforward pricing block outlining beta-tier access and the fee-free, flat-rate structure.',
+        image: '/projects/warungify/pricing.png'
+      },
+      {
+        title: 'Platform Footer Branding',
+        description: 'A minimal, light-themed footer wrapping up the platform page with navigation links and copyright declarations.',
+        image: '/projects/warungify/footer.png'
+      }
+    ]
   },
   {
     id: 'capsule',
@@ -328,7 +385,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject,
               </div>
 
               {/* Bottom mockup image container */}
-              <div className={`relative w-full aspect-[4/3] rounded-b-2xl overflow-hidden flex items-center justify-center ${project.id === 'scholarhub' ? 'bg-[#fcfcfb]' : 'bg-neutral-950'}`}>
+              <div className={`relative w-full aspect-[4/3] rounded-b-2xl overflow-hidden flex items-center justify-center ${['scholarhub', 'warungify'].includes(project.id) ? 'bg-[#fcfcfb]' : 'bg-neutral-950'}`}>
                 <img 
                   src={project.background} 
                   alt={`${project.name} Portfolio Showcase Background Mockup`} 
@@ -336,7 +393,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject,
                 />
                 
                 {/* Dark Vignette Overlay for Premium Contrast */}
-                <div className={`absolute inset-0 transition-all duration-[1000ms] ${project.id === 'scholarhub' ? 'bg-black/5 group-hover:bg-black/10' : 'bg-gradient-to-t from-black/45 via-black/10 to-black/30 group-hover:from-black/35 group-hover:to-black/20'}`} />
+                <div className={`absolute inset-0 transition-all duration-[1000ms] ${['scholarhub', 'warungify'].includes(project.id) ? 'bg-black/5 group-hover:bg-black/10' : 'bg-gradient-to-t from-black/45 via-black/10 to-black/30 group-hover:from-black/35 group-hover:to-black/20'}`} />
 
                 {/* SVG Logo Center Stage */}
                 <div className="relative z-10 scale-[0.95] group-hover:scale-100 opacity-90 group-hover:opacity-100 transition-all duration-[1000ms] ease-[0.16,1,0.3,1]">

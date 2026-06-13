@@ -159,7 +159,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
           initial="hidden"
           animate="visible"
           custom={0.4}
-          className={`relative w-full aspect-[16/10] md:aspect-[21/9] rounded-3xl overflow-hidden flex items-center justify-center mb-20 border border-neutral-900 shadow-2xl ${project.id === 'scholarhub' ? 'bg-[#fcfcfb]' : 'bg-neutral-950'}`}
+          className={`relative w-full aspect-[16/10] md:aspect-[21/9] rounded-3xl overflow-hidden flex items-center justify-center mb-20 border border-neutral-900 shadow-2xl ${['scholarhub', 'warungify'].includes(project.id) ? 'bg-[#fcfcfb]' : 'bg-neutral-950'}`}
         >
           <img 
             src={project.background} 
@@ -167,7 +167,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
             className="absolute inset-0 w-full h-full object-cover grayscale-0 opacity-100"
           />
           {/* Subtle gradient overlay to tie the card into the dark background */}
-          <div className={`absolute inset-0 ${project.id === 'scholarhub' ? 'bg-black/5' : 'bg-gradient-to-t from-black/60 via-black/5 to-black/35'}`} />
+          <div className={`absolute inset-0 ${['scholarhub', 'warungify'].includes(project.id) ? 'bg-black/5' : 'bg-gradient-to-t from-black/60 via-black/5 to-black/35'}`} />
           
           {/* Floating Glassmorphic Logo Badge (editorial bottom-left placement) */}
           <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-neutral-950/70 backdrop-blur-md border border-neutral-800/80 rounded-2xl px-5 py-3.5 flex items-center shadow-2xl">
@@ -258,7 +258,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
                 Visual Showcase.
               </h2>
               <p className="text-base md:text-lg text-neutral-400 font-light leading-relaxed">
-                An editorial walkthrough of ScholarHub's interface design, search workflows, custom components, and responsive grid layouts.
+                {projectId === 'scholarhub' 
+                  ? "An editorial walkthrough of ScholarHub's interface design, search workflows, custom components, and responsive grid layouts."
+                  : "An editorial walkthrough of Warungify's interface design, magic paste text parser, operational dashboard queues, and CRM modules."}
               </p>
             </div>
 
@@ -266,7 +268,9 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
               {project.gallery.map((item, index) => {
                 const isFullWidth = projectId === 'scholarhub'
                   ? [0, 6, 8, 11].includes(index)
-                  : index % 3 === 0;
+                  : (projectId === 'warungify'
+                    ? [0, 2, 4, 5, 6, 7, 10, 11].includes(index)
+                    : index % 3 === 0);
 
                 // Create custom visual category labels
                 let categoryLabel = 'Interface';
@@ -278,6 +282,18 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
                   else if (index === 6) categoryLabel = 'Detailed Profiles';
                   else if (index === 8) categoryLabel = 'Search Directory';
                   else if (index === 9 || index === 10) categoryLabel = 'User Outreach';
+                  else if (index === 11) categoryLabel = 'Footer Design';
+                } else if (projectId === 'warungify') {
+                  if (index === 0) categoryLabel = 'Landing Screen';
+                  else if (index === 1) categoryLabel = 'Gated Access';
+                  else if (index === 2) categoryLabel = 'Operations Dashboard';
+                  else if (index === 3) categoryLabel = 'Magic Order Parser';
+                  else if (index === 4) categoryLabel = 'Order Workflows';
+                  else if (index === 5) categoryLabel = 'Customer CRM';
+                  else if (index === 6) categoryLabel = 'WhatsApp Outreach';
+                  else if (index === 7 || index === 8) categoryLabel = 'Operational Features';
+                  else if (index === 9) categoryLabel = 'Visual Workflow Map';
+                  else if (index === 10) categoryLabel = 'Workspace Pricing';
                   else if (index === 11) categoryLabel = 'Footer Design';
                 }
 
@@ -291,13 +307,13 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
                     className={`flex flex-col gap-5 ${isFullWidth ? 'md:col-span-2' : ''}`}
                   >
                     {/* Visual Card Frame */}
-                    <div className={`relative w-full overflow-hidden rounded-[24px] border border-neutral-900 group shadow-lg hover:border-neutral-800 transition-colors duration-500 ${projectId === 'scholarhub' && [1, 2, 10].includes(index) ? 'bg-[#0a0a0a]' : (projectId === 'scholarhub' ? 'bg-[#fcfcfb]' : 'bg-neutral-950/40')}`}>
+                    <div className={`relative w-full overflow-hidden rounded-[24px] border border-neutral-900 group shadow-lg hover:border-neutral-800 transition-colors duration-500 ${projectId === 'scholarhub' && [1, 2, 10].includes(index) ? 'bg-[#0a0a0a]' : (['scholarhub', 'warungify'].includes(projectId) ? 'bg-[#fcfcfb]' : 'bg-neutral-950/40')}`}>
                       {/* Floating Category Tag */}
                       <span className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md border border-neutral-800/60 rounded-full px-3 py-1 text-[10px] font-mono tracking-wider text-neutral-300 uppercase">
                         {categoryLabel}
                       </span>
                       
-                      <div className={`absolute inset-0 ${projectId === 'scholarhub' && [1, 2, 10].includes(index) ? 'bg-neutral-950/10 group-hover:bg-transparent' : (projectId === 'scholarhub' ? 'bg-transparent' : 'bg-neutral-950/10 group-hover:bg-transparent')} transition-colors duration-500 z-10`} />
+                      <div className={`absolute inset-0 ${projectId === 'scholarhub' && [1, 2, 10].includes(index) ? 'bg-neutral-950/10 group-hover:bg-transparent' : (['scholarhub', 'warungify'].includes(projectId) ? 'bg-transparent' : 'bg-neutral-950/10 group-hover:bg-transparent')} transition-colors duration-500 z-10`} />
                       
                       <img
                         src={item.image}
