@@ -280,10 +280,9 @@ export const WhyUs: React.FC = () => {
                     el.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="group flex items-center justify-center gap-2 bg-white text-black font-sans text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-neutral-200 transition-colors duration-300 shadow-lg"
+                className="group px-6 py-3 rounded-full bg-white text-black hover:bg-black hover:text-white transition-colors duration-300 font-sans font-medium text-xs md:text-sm flex items-center gap-1.5 border border-white hover:border-black shadow-[0_4px_12px_rgba(255,255,255,0.1)]"
               >
-                <span>Book a discovery call</span>
-                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+                <TextRoll text="Book a discovery call →" className="font-medium text-xs md:text-sm" />
               </a>
             </div>
           </div>
