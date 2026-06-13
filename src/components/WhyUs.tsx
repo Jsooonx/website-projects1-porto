@@ -31,11 +31,7 @@ const PlusCircleIcon = () => (
   </svg>
 );
 
-const StarIcon = () => (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" className="text-yellow-500 opacity-90">
-    <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-  </svg>
-);
+
 
 export const WhyUs: React.FC = () => {
   const containerVariants: Variants = {
@@ -95,12 +91,7 @@ export const WhyUs: React.FC = () => {
     'Reliable Support',
   ];
 
-  const avatars = [
-    '/about_portrait_male.png',
-    '/sofia_avatar.png',
-    '/about_portrait.png',
-    '/about_portrait_male.png',
-  ];
+
 
   return (
     <motion.div
@@ -240,70 +231,60 @@ export const WhyUs: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* ROW 2 RIGHT: Testimonial Card with Silk Waves Backdrop (Col Span 6) */}
+        {/* ROW 2 RIGHT: Collaborate CTA Card with Silk Waves Backdrop (Col Span 6) */}
         <motion.div
           variants={itemVariants}
           className="lg:col-span-6 bg-neutral-950 border border-neutral-900 rounded-3xl overflow-hidden relative group/card flex flex-col justify-between p-6 md:p-8 min-h-[380px] lg:min-h-0"
         >
-          {/* Testimonial Backdrop Pattern */}
+          {/* Silk Waves Backdrop Pattern */}
           <img
             src="/why_testimonial_bg.png"
-            alt="Testimonial Background"
+            alt="Collaborate Background"
             className="absolute inset-0 w-full h-full object-cover grayscale opacity-90 group-hover/card:scale-[1.02] group-hover/card:opacity-100 transition-all duration-[1000ms] ease-out"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-transparent to-black/70 pointer-events-none" />
 
-          {/* Top Row: Avatar Stack & CTA Buttons */}
+          {/* Top Row: Availability Badge */}
           <div className="relative z-10 flex flex-wrap gap-4 items-center justify-between w-full mb-8">
-            <div className="flex items-center">
-              {/* Stack of overlapping client avatars */}
-              <div className="flex -space-x-2.5">
-                {avatars.map((url, index) => (
-                  <img
-                    key={index}
-                    src={url}
-                    alt={`Happy Client ${index + 1}`}
-                    className="w-7 h-7 rounded-full object-cover grayscale border-2 border-black"
-                  />
-                ))}
-              </div>
-              <span className="text-[10px] md:text-xs text-neutral-400 font-sans font-light ml-3">
-                100+ Happy clients worldwide
+            <div className="flex items-center gap-2">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+              </span>
+              <span className="text-xs text-neutral-300 font-sans font-light tracking-wide uppercase">
+                Currently Open for Bookings
               </span>
             </div>
-
-
           </div>
 
-          {/* Bottom Area: Testimonial & Author Info */}
-          <div className="relative z-10 flex flex-col gap-5 mt-auto">
-            {/* Stars */}
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <StarIcon key={i} />
-              ))}
+          {/* Bottom Area: Call to Action */}
+          <div className="relative z-10 flex flex-col gap-6 mt-auto">
+            {/* Title & Description */}
+            <div className="flex flex-col gap-2.5">
+              <h3 className="text-white font-sans font-medium text-2xl md:text-3xl tracking-tight leading-tight">
+                Let's collaborate on your next digital venture.
+              </h3>
+              <p className="text-neutral-400 font-sans font-light text-sm leading-relaxed max-w-[95%]">
+                Your brand identity or digital product deserves a thoughtful, minimal, and high-performance design system. Let's work together to bring it to life.
+              </p>
             </div>
 
-            {/* Testimonial Quote */}
-            <p className="text-neutral-200 font-sans font-light text-sm md:text-base leading-relaxed italic">
-              "Jsooonx understood our brand better than we did. Their ability to find the essential and express it simply is what sets them apart."
-            </p>
-
-            {/* Author */}
-            <div className="flex items-center gap-3 mt-1.5">
-              <img
-                src="/sofia_avatar.png"
-                alt="Sofia Ford Portrait headshot"
-                className="w-9 h-9 rounded-full object-cover grayscale border border-neutral-800"
-              />
-              <div className="flex flex-col">
-                <span className="text-white font-sans font-semibold text-xs md:text-sm">
-                  Sofia Ford
-                </span>
-                <span className="text-neutral-500 font-sans text-[10px] md:text-xs font-light">
-                  Founder
-                </span>
-              </div>
+            {/* Action Buttons */}
+            <div className="flex items-center gap-4 mt-2">
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById('contact');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="group flex items-center justify-center gap-2 bg-white text-black font-sans text-xs font-semibold px-5 py-2.5 rounded-full hover:bg-neutral-200 transition-colors duration-300 shadow-lg"
+              >
+                <span>Book a discovery call</span>
+                <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
+              </a>
             </div>
           </div>
         </motion.div>

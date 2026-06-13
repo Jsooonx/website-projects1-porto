@@ -9,7 +9,6 @@ export const HeroTitle: React.FC = () => {
       viewport={{ once: true, margin: '-50px 0px -50px 0px' }}
       className="px-1.5 md:px-3 py-10 md:py-16 flex flex-col md:flex-row md:items-end justify-between gap-6 w-full select-none"
     >
-      {/* Massive Title */}
       <div className="w-full md:w-[70%] overflow-hidden">
         <motion.h1
           variants={{
@@ -17,9 +16,10 @@ export const HeroTitle: React.FC = () => {
             visible: { y: 0, opacity: 1, filter: 'blur(0px)' }
           }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-[14vw] sm:text-[12vw] md:text-[10vw] font-bold leading-[0.85] tracking-[-0.04em] text-white flex items-start"
+          className="text-[14vw] sm:text-[12vw] md:text-[10vw] font-bold leading-[0.85] tracking-[-0.04em] text-white flex items-center gap-3 md:gap-4.5"
         >
-          Jsooonx
+          <img src="/logo/jsooonx_logo.png" className="h-[9.5vw] w-[9.5vw] md:h-[7vw] md:w-[7vw] object-contain flex-shrink-0" alt="Jsooonx Logo" />
+          <span>Jsooonx</span>
           <span className="text-[5vw] sm:text-[4vw] md:text-[3.5vw] font-medium ml-1 leading-none tracking-normal">
             ®
           </span>

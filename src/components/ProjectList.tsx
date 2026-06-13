@@ -136,7 +136,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({ onBack, onNavigateToPr
                 </div>
 
                 {/* Bottom mockup image container */}
-                <div className="relative w-full aspect-[4/3] rounded-b-2xl overflow-hidden bg-neutral-950 flex items-center justify-center flex-grow">
+                <div className={`relative w-full aspect-[4/3] rounded-b-2xl overflow-hidden flex items-center justify-center flex-grow ${project.id === 'scholarhub' ? 'bg-[#fcfcfb]' : 'bg-neutral-950'}`}>
                   <img 
                     src={project.background} 
                     alt={`${project.name} Portfolio Showcase Background Mockup`} 
@@ -144,7 +144,7 @@ export const ProjectList: React.FC<ProjectListProps> = ({ onBack, onNavigateToPr
                   />
                   
                   {/* Dark Vignette Overlay for Premium Contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-black/30 group-hover:from-black/35 group-hover:to-black/20 transition-all duration-[1000ms]" />
+                  <div className={`absolute inset-0 transition-all duration-[1000ms] ${project.id === 'scholarhub' ? 'bg-black/5 group-hover:bg-black/10' : 'bg-gradient-to-t from-black/45 via-black/10 to-black/30 group-hover:from-black/35 group-hover:to-black/20'}`} />
 
                   {/* SVG Logo Center Stage */}
                   <div className="relative z-10 scale-[0.95] group-hover:scale-100 opacity-90 group-hover:opacity-100 transition-all duration-[1000ms] ease-[0.16,1,0.3,1]">

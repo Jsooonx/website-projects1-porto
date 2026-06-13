@@ -72,7 +72,10 @@ export const Header: React.FC = () => {
           <div className="flex items-center justify-between py-3.5">
             {/* Left side: logo + timestamp */}
             <div className="flex items-center space-x-3.5 select-none">
-              <span className="text-white font-bold font-sans tracking-tight text-[14px]">Jsooonx®</span>
+              <div className="flex items-center gap-2">
+                <img src="/logo/jsooonx_logo.png" className="h-4.5 w-4.5 object-contain" alt="Jsooonx Logo" />
+                <span className="text-white font-bold font-sans tracking-tight text-[14px]">Jsooonx®</span>
+              </div>
               <span className="text-neutral-500 font-sans text-[12px] font-normal tracking-wide">{time || '29 May, 8.44 pm'}</span>
             </div>
 

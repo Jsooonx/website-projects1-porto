@@ -16,59 +16,59 @@ export const Services: React.FC = () => {
 
   const servicesData: ServiceItem[] = [
     {
-      id: 'brand-identity',
-      title: 'Brand Identity',
-      image: '/services_brand.png',
-      description: 'We craft cohesive brand systems that communicate who you are with clarity and intention, from the core idea to every visual expression.',
-      tags: [
-        'Logo Design',
-        'Visual Identity Systems',
-        'Brand Guidelines',
-        'Typography & Color Systems',
-        'Naming & Tone of Voice',
-        'Brand Strategy'
-      ]
-    },
-    {
-      id: 'digital-design',
-      title: 'Digital Design',
+      id: 'web-development',
+      title: 'Web Development',
       image: '/services_digital.png',
-      description: 'We build intuitive, high-performance web and mobile platforms that merge aesthetics with functionality to deliver unforgettable user experiences.',
+      description: 'We build blazing fast, responsive, and pixel-perfect web applications using modern technologies like React, Next.js, TypeScript, and Tailwind CSS.',
       tags: [
-        'UI/UX Design',
-        'Web Design',
-        'Mobile Apps',
-        'E-Commerce Platforms',
-        'Interactive Prototypes',
-        'Design Systems'
+        'React & Next.js',
+        'TypeScript Integration',
+        'Tailwind CSS v4',
+        'Headless CMS & APIs',
+        'Performance Optimization',
+        'Responsive Engineering'
       ]
     },
     {
-      id: 'art-direction',
-      title: 'Art Direction',
+      id: 'ui-ux-design',
+      title: 'UI/UX Design',
+      image: '/services_brand.png',
+      description: 'We design stunning, clean, and intuitive interfaces focused on micro-interactions, editorial typography, and high-fidelity motion aesthetics.',
+      tags: [
+        'Figma Design Systems',
+        'Interaction Design',
+        'Wireframing & Prototyping',
+        'Visual Design Systems',
+        'User Journey Mapping',
+        'Accessibility (WCAG)'
+      ]
+    },
+    {
+      id: 'creative-engineering',
+      title: 'Creative Engineering',
       image: '/services_art.png',
-      description: 'We define the creative vision and visual storytelling of your projects, ensuring consistent aesthetic quality across all physical and digital touchpoints.',
+      description: 'We blend hardware-accelerated animations, custom interactions, and smooth scrolling to craft memorable, premium web experiences.',
       tags: [
-        'Creative Direction',
-        'Visual Storytelling',
-        'Photography & Styling',
-        'Editorial Layouts',
-        'Curation',
-        'Campaign Visuals'
+        'Framer Motion',
+        'Micro-Animations',
+        'Lenis Smooth Scroll',
+        'Custom Web Transitions',
+        '3D & SVG Animations',
+        'Interactive Canvas'
       ]
     },
     {
-      id: 'strategy-consulting',
-      title: 'Strategy & Consulting',
+      id: 'technical-strategy',
+      title: 'Technical Strategy',
       image: '/services_strategy.png',
-      description: 'We partner with visionary companies to align design execution with business objectives, identifying positioning opportunities and scaling workflows.',
+      description: 'We consult on codebase scalability, technical workflows, modern deployment architectures, and advanced search engine optimization (SEO).',
       tags: [
-        'Brand Positioning',
-        'UX Strategy',
-        'Product Consulting',
-        'Design Audits',
-        'Competitor Research',
-        'Creative Workflows'
+        'Codebase Audits',
+        'Technical Consulting',
+        'Vercel & CI/CD Setup',
+        'SEO & Schema Markup',
+        'Analytics Tracking',
+        'Performance Audits'
       ]
     }
   ];

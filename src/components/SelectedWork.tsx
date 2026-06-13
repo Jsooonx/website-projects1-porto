@@ -19,33 +19,98 @@ export interface Project {
   techStack: string[];
   role: string;
   client: string;
+  website?: string;
+  gallery?: {
+    title: string;
+    description: string;
+    image: string;
+  }[];
 }
 
 export const projectsData: Project[] = [
   {
-    id: 'boltshift',
-    name: 'Boltshift',
-    year: '/2025',
-    category: 'Fintech Platform',
-    background: '/boltshift_bg.png',
-    colorTheme: '#D2B48C', // Tan/Beige
+    id: 'scholarhub',
+    name: 'ScholarHub',
+    year: '/2026',
+    category: 'Scholarship Directory',
+    background: '/projects/scholarhub/hero.png',
+    colorTheme: '#0019ff', // Royal Blue
     logo: (
       <div className="flex items-center gap-3 text-white">
-        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black shadow-lg">
-          <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-          </svg>
-        </div>
-        <span className="text-2xl font-bold font-sans tracking-tight">Boltshift</span>
+        <img src="/logo/Scholarhub_logo.png" className="w-10 h-10 rounded-xl object-contain shadow-lg" alt="ScholarHub Logo" />
+        <span className="text-2xl font-bold font-sans tracking-tight">ScholarHub</span>
       </div>
     ),
-    shortDesc: 'A curated digital experience for a global technology consultancy, blending high-end performance with editorial layout.',
-    longDesc: 'Boltshift is a modern tech consulting firm. We designed and built their entire corporate platform, focusing on high-performance page loads, fluid editorial layouts, and a custom interactive client portal. The interface uses a warm, sandy beige palette contrasting with crisp typography to reflect their sophisticated approach to technology.',
-    challenge: 'The client needed to communicate complex engineering solutions to executive stakeholders while establishing a bold, authoritative visual identity that stands out from typical corporate tech designs.',
-    solution: 'We developed an editorial-driven layout highlighting their core methodologies with interactive custom widgets and a refined typography system. By integrating dynamic loaders and smooth pagination, we built an immersive narrative.',
-    techStack: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'GraphQL'],
-    role: 'Creative Direction, UI/UX Design, Frontend Architecture',
-    client: 'Boltshift Inc.'
+    shortDesc: 'A premium, highly-curated directory and search platform designed to help students discover and track over 56+ international scholarships across 9 countries with zero friction.',
+    longDesc: 'ScholarHub is a sleek, editorial-style web application built to streamline the process of finding international funding opportunities (such as DAAD, MEXT, Chevening, and GKS). It eliminates the hassle of navigating multiple outdated government portals by aggregating verified, structured scholarship data into a unified, search-optimized platform. Every aspect of the platform is designed to make global educational funding opportunities visually striking, easily searchable, and highly accessible to students worldwide.',
+    challenge: 'Students seeking global education face massive fragmentation: scholarship requirements, deadlines, benefits, and application links are scattered across dozens of different, poorly-designed embassy websites and university portals. This leads to missed deadlines, confusion about eligibility (e.g., work experience, degree requirements, or country restrictions), and a high barrier of entry for talented applicants who simply cannot find or digest the information.',
+    solution: 'We aggregated and structured metadata for over 56+ international scholarships from 9 countries, detailing degree levels, fields of study, funding types, and exact benefits. To solve navigation friction, we designed and implemented a custom "Dynamic Island" navigation bar that transitions dynamically between a compact brand view, an inline search bar, and an expanded directory grid using cubic-bezier easing. Additionally, we built a robust, responsive filter system with synchronized URL state management, structured eligibility checkmarks, benefit breakdowns, and smooth scrolling via Lenis.',
+    techStack: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS v4', 'Framer Motion', 'Lenis'],
+    role: 'Frontend Developer & UI/UX Designer',
+    client: 'ScholarHub Project',
+    website: 'https://scholarhub.jsooonx.my.id',
+    gallery: [
+      {
+        title: 'Hero Landing Experience',
+        description: 'The editorial landing interface welcoming students to global educational funding with clean Outfit/Lora typography, balanced layout elements, and smooth scrolling via Lenis.',
+        image: '/projects/scholarhub/hero.png'
+      },
+      {
+        title: 'Dynamic Island Navbar - Search State',
+        description: 'The custom, CSS-accelerated navigation bar morphs seamlessly into an inline search input box on query focus with a custom cubic-bezier easing curve.',
+        image: '/projects/scholarhub/dynamicislandnavbarsearch.png'
+      },
+      {
+        title: 'Dynamic Island Navbar - Menu State',
+        description: 'The navbar expands dynamically using ResizeObserver into a full-bleed multi-column directory panel mapping offering countries and flags.',
+        image: '/projects/scholarhub/dynamicislandnavbarmenu.png'
+      },
+      {
+        title: 'Filter by Offering Countries',
+        description: 'Country-oriented directory layout displaying official flags and custom badges to offer visually guided search paths.',
+        image: '/projects/scholarhub/byprovider.png'
+      },
+      {
+        title: 'Academic Level Segmentation',
+        description: 'Explicit category segments mapping opportunities to Bachelor, Master, PhD, and Postdoc pathways to filter candidates immediately.',
+        image: '/projects/scholarhub/browsebylevel.png'
+      },
+      {
+        title: 'Curated Editor\'s Picks',
+        description: 'Prominent, high-value global scholarship opportunities highlighted on the dashboard to maximize exposure for applicants.',
+        image: '/projects/scholarhub/editorspick.png'
+      },
+      {
+        title: 'Structured Scholarship Profiles',
+        description: 'Displays detailed benefits, eligibility checkmarks (degree level, experience threshold), and verified links to official portals.',
+        image: '/projects/scholarhub/eachscholarshipdesc.png'
+      },
+      {
+        title: 'Real-time Verification Feed',
+        description: 'The latest addition cards showing freshly updated and verified funding opportunities with exact criteria and fields of study.',
+        image: '/projects/scholarhub/latestadditions.png'
+      },
+      {
+        title: 'Unified Search Directory Grid',
+        description: 'A comprehensive, search-optimized list displaying metadata for over 56+ active scholarships with integrated URL state filters.',
+        image: '/projects/scholarhub/allscholarships.png'
+      },
+      {
+        title: 'Smart Deadline Reminders',
+        description: 'Alert and reminder modules that notify students of upcoming application deadlines, minimizing missed opportunities.',
+        image: '/projects/scholarhub/notify.png'
+      },
+      {
+        title: 'Outreach Subscription Module',
+        description: 'An elegant call-to-action block designed to capture candidate interest and send automated weekly funding alerts.',
+        image: '/projects/scholarhub/dontmissout.png'
+      },
+      {
+        title: 'Editorial Site Footer',
+        description: 'A dark, high-contrast footer containing structured site navigation links, social links, and official brand credentials.',
+        image: '/projects/scholarhub/footer.png'
+      }
+    ]
   },
   {
     id: 'ephemeral',
@@ -263,7 +328,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject,
               </div>
 
               {/* Bottom mockup image container */}
-              <div className="relative w-full aspect-[4/3] rounded-b-2xl overflow-hidden bg-neutral-950 flex items-center justify-center">
+              <div className={`relative w-full aspect-[4/3] rounded-b-2xl overflow-hidden flex items-center justify-center ${project.id === 'scholarhub' ? 'bg-[#fcfcfb]' : 'bg-neutral-950'}`}>
                 <img 
                   src={project.background} 
                   alt={`${project.name} Portfolio Showcase Background Mockup`} 
@@ -271,7 +336,7 @@ export const SelectedWork: React.FC<SelectedWorkProps> = ({ onNavigateToProject,
                 />
                 
                 {/* Dark Vignette Overlay for Premium Contrast */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-black/30 group-hover:from-black/35 group-hover:to-black/20 transition-all duration-[1000ms]" />
+                <div className={`absolute inset-0 transition-all duration-[1000ms] ${project.id === 'scholarhub' ? 'bg-black/5 group-hover:bg-black/10' : 'bg-gradient-to-t from-black/45 via-black/10 to-black/30 group-hover:from-black/35 group-hover:to-black/20'}`} />
 
                 {/* SVG Logo Center Stage */}
                 <div className="relative z-10 scale-[0.95] group-hover:scale-100 opacity-90 group-hover:opacity-100 transition-all duration-[1000ms] ease-[0.16,1,0.3,1]">

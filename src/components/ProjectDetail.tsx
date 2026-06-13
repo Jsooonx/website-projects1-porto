@@ -127,6 +127,29 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
               <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 block mb-1">Role</span>
               <span className="text-sm font-sans font-light text-neutral-200">{project.role.split(',')[0]}</span>
             </div>
+            {project.website && (
+              <div className="col-span-2 md:col-span-1">
+                <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 block mb-1">Website</span>
+                <a 
+                  href={project.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-sans font-medium hover:underline flex items-center gap-1 group/link w-fit transition-colors duration-300"
+                  style={{ color: project.colorTheme }}
+                >
+                  Visit Site
+                  <svg 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    stroke="currentColor" 
+                    strokeWidth="2.5" 
+                    className="w-3.5 h-3.5 transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-300"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+                  </svg>
+                </a>
+              </div>
+            )}
           </motion.div>
         </div>
 
@@ -136,15 +159,18 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
           initial="hidden"
           animate="visible"
           custom={0.4}
-          className="relative w-full aspect-[16/10] md:aspect-[21/9] rounded-3xl overflow-hidden bg-neutral-950 flex items-center justify-center mb-20 border border-neutral-900 shadow-2xl"
+          className={`relative w-full aspect-[16/10] md:aspect-[21/9] rounded-3xl overflow-hidden flex items-center justify-center mb-20 border border-neutral-900 shadow-2xl ${project.id === 'scholarhub' ? 'bg-[#fcfcfb]' : 'bg-neutral-950'}`}
         >
           <img 
             src={project.background} 
             alt={`${project.name} Immersive Visual Mockup`} 
-            className="absolute inset-0 w-full h-full object-cover grayscale opacity-[0.9]"
+            className="absolute inset-0 w-full h-full object-cover grayscale-0 opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-black/30" />
-          <div className="relative z-10 scale-[1.3] md:scale-[1.6]">
+          {/* Subtle gradient overlay to tie the card into the dark background */}
+          <div className={`absolute inset-0 ${project.id === 'scholarhub' ? 'bg-black/5' : 'bg-gradient-to-t from-black/60 via-black/5 to-black/35'}`} />
+          
+          {/* Floating Glassmorphic Logo Badge (editorial bottom-left placement) */}
+          <div className="absolute bottom-4 left-4 md:bottom-8 md:left-8 z-20 bg-neutral-950/70 backdrop-blur-md border border-neutral-800/80 rounded-2xl px-5 py-3.5 flex items-center shadow-2xl">
             {project.logo}
           </div>
         </motion.div>
@@ -223,8 +249,85 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
           </div>
         </div>
 
+        {/* Case Study Gallery / Interface Showcase */}
+        {project.gallery && project.gallery.length > 0 && (
+          <div className="border-t border-neutral-900 pt-16 pb-24 w-full">
+            <div className="max-w-2xl mb-16">
+              <span className="text-xs font-mono uppercase tracking-widest text-neutral-500 block mb-3">System Interface</span>
+              <h2 className="text-4xl md:text-5xl font-sans font-bold tracking-tight text-white mb-4">
+                Visual Showcase.
+              </h2>
+              <p className="text-base md:text-lg text-neutral-400 font-light leading-relaxed">
+                An editorial walkthrough of ScholarHub's interface design, search workflows, custom components, and responsive grid layouts.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 w-full">
+              {project.gallery.map((item, index) => {
+                const isFullWidth = projectId === 'scholarhub'
+                  ? [0, 6, 8, 11].includes(index)
+                  : index % 3 === 0;
+
+                // Create custom visual category labels
+                let categoryLabel = 'Interface';
+                if (projectId === 'scholarhub') {
+                  if (index === 0) categoryLabel = 'Landing Screen';
+                  else if (index === 1 || index === 2) categoryLabel = 'Dynamic Island';
+                  else if (index === 3 || index === 4) categoryLabel = 'Discovery Modules';
+                  else if (index === 5 || index === 7) categoryLabel = 'Featured Feeds';
+                  else if (index === 6) categoryLabel = 'Detailed Profiles';
+                  else if (index === 8) categoryLabel = 'Search Directory';
+                  else if (index === 9 || index === 10) categoryLabel = 'User Outreach';
+                  else if (index === 11) categoryLabel = 'Footer Design';
+                }
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 50, filter: 'blur(10px)' }}
+                    whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    viewport={{ once: true, margin: '-100px 0px -100px 0px' }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                    className={`flex flex-col gap-5 ${isFullWidth ? 'md:col-span-2' : ''}`}
+                  >
+                    {/* Visual Card Frame */}
+                    <div className={`relative w-full overflow-hidden rounded-[24px] border border-neutral-900 group shadow-lg hover:border-neutral-800 transition-colors duration-500 ${projectId === 'scholarhub' && [1, 2, 10].includes(index) ? 'bg-[#0a0a0a]' : (projectId === 'scholarhub' ? 'bg-[#fcfcfb]' : 'bg-neutral-950/40')}`}>
+                      {/* Floating Category Tag */}
+                      <span className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md border border-neutral-800/60 rounded-full px-3 py-1 text-[10px] font-mono tracking-wider text-neutral-300 uppercase">
+                        {categoryLabel}
+                      </span>
+                      
+                      <div className={`absolute inset-0 ${projectId === 'scholarhub' && [1, 2, 10].includes(index) ? 'bg-neutral-950/10 group-hover:bg-transparent' : (projectId === 'scholarhub' ? 'bg-transparent' : 'bg-neutral-950/10 group-hover:bg-transparent')} transition-colors duration-500 z-10`} />
+                      
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-auto object-cover group-hover:scale-[1.015] transition-transform duration-[1000ms] ease-[0.16,1,0.3,1]"
+                        loading="lazy"
+                      />
+                    </div>
+                    
+                    {/* Description Block */}
+                    <div className="flex flex-col md:flex-row md:items-start justify-between gap-3 px-2">
+                      <div className="max-w-md">
+                        <h4 className="text-xl font-bold text-white tracking-tight mb-1">{item.title}</h4>
+                        <span className="text-xs font-mono text-neutral-500">
+                          Fig. {String(index + 1).padStart(2, '0')}
+                        </span>
+                      </div>
+                      <p className="text-sm md:text-[15px] text-neutral-400 font-light leading-relaxed max-w-xl md:text-right">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
         {/* Footer Navigation */}
-        <div className="border-t border-neutral-900 pt-12 flex items-center justify-between mb-16">
+        <div className="border-t border-neutral-900 pt-12 flex items-center justify-between mb-16 w-full gap-4">
           <a
             href="#"
             onClick={(e) => {
@@ -235,6 +338,17 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
           >
             <TextRoll text="← Back to Selected Work" className="font-medium text-xs md:text-sm" />
           </a>
+          
+          {project.website && (
+            <a
+              href={project.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group px-6 py-3 rounded-full bg-transparent text-white hover:bg-white hover:text-black transition-colors duration-300 font-sans font-medium text-xs md:text-sm flex items-center gap-1.5 border border-neutral-800 hover:border-white shadow-lg"
+            >
+              <TextRoll text="Visit Live Site ↗" className="font-medium text-xs md:text-sm" />
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
