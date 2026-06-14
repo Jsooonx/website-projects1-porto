@@ -86,11 +86,6 @@ export const projectsData: Project[] = [
         image: '/projects/scholarhub/desceachsscholarships.png'
       },
       {
-        title: 'Real-time Verification Feed',
-        description: 'The latest addition cards showing freshly updated and verified funding opportunities with exact criteria and fields of study.',
-        image: '/projects/scholarhub/latest.png'
-      },
-      {
         title: 'Unified Search Directory Grid',
         description: 'A comprehensive, search-optimized list displaying metadata for over 56+ active scholarships with integrated URL state filters.',
         image: '/projects/scholarhub/lists.png'

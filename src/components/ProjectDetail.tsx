@@ -190,6 +190,23 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
               <p className="text-base md:text-lg text-neutral-300 font-light leading-relaxed">
                 {project.longDesc}
               </p>
+
+              {/* Living Project Disclaimer */}
+              {project.id === 'scholarhub' && (
+                <div className="mt-4 p-5 rounded-2xl bg-neutral-950/40 border border-neutral-900 flex items-start gap-4 shadow-inner">
+                  <div className="w-8 h-8 rounded-full bg-[#0019ff]/15 border border-[#0019ff]/30 flex items-center justify-center text-[#0019ff] shrink-0 mt-0.5">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
+                      <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-xs font-mono text-[#0019ff] uppercase tracking-wider font-semibold">Living Project</span>
+                    <p className="text-sm text-neutral-400 font-light leading-relaxed">
+                      ScholarHub is a continuously growing platform. The directory is regularly updated with new international scholarships, and we are constantly developing advanced features to streamline search optimization and application tracking.
+                    </p>
+                  </div>
+                </div>
+              )}
             </motion.div>
 
             {/* Challenge */}
@@ -267,7 +284,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 w-full">
               {project.gallery.map((item, index) => {
                 const isFullWidth = projectId === 'scholarhub'
-                  ? [0, 6, 8, 11].includes(index)
+                  ? [0, 6, 7, 10].includes(index)
                   : (projectId === 'warungify'
                     ? [0, 2, 4, 5, 6, 7, 10, 11].includes(index)
                     : index % 3 === 0);
@@ -278,11 +295,11 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
                   if (index === 0) categoryLabel = 'Landing Screen';
                   else if (index === 1 || index === 2) categoryLabel = 'Dynamic Island';
                   else if (index === 3 || index === 4) categoryLabel = 'Discovery Modules';
-                  else if (index === 5 || index === 7) categoryLabel = 'Featured Feeds';
+                  else if (index === 5) categoryLabel = 'Featured Feeds';
                   else if (index === 6) categoryLabel = 'Detailed Profiles';
-                  else if (index === 8) categoryLabel = 'Search Directory';
-                  else if (index === 9 || index === 10) categoryLabel = 'User Outreach';
-                  else if (index === 11) categoryLabel = 'Footer Design';
+                  else if (index === 7) categoryLabel = 'Search Directory';
+                  else if (index === 8 || index === 9) categoryLabel = 'User Outreach';
+                  else if (index === 10) categoryLabel = 'Footer Design';
                 } else if (projectId === 'warungify') {
                   if (index === 0) categoryLabel = 'Landing Screen';
                   else if (index === 1) categoryLabel = 'Gated Access';
@@ -307,13 +324,13 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
                     className={`flex flex-col gap-5 ${isFullWidth ? 'md:col-span-2' : ''}`}
                   >
                     {/* Visual Card Frame */}
-                    <div className={`relative w-full overflow-hidden rounded-[24px] border border-neutral-900 group shadow-lg hover:border-neutral-800 transition-colors duration-500 ${projectId === 'scholarhub' && [1, 2, 10].includes(index) ? 'bg-[#0a0a0a]' : (['scholarhub', 'warungify'].includes(projectId) ? 'bg-[#fcfcfb]' : 'bg-neutral-950/40')}`}>
+                    <div className={`relative w-full overflow-hidden rounded-[24px] border border-neutral-900 group shadow-lg hover:border-neutral-800 transition-colors duration-500 ${projectId === 'scholarhub' && [1, 2, 9].includes(index) ? 'bg-[#0a0a0a]' : (['scholarhub', 'warungify'].includes(projectId) ? 'bg-[#fcfcfb]' : 'bg-neutral-950/40')}`}>
                       {/* Floating Category Tag */}
                       <span className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md border border-neutral-800/60 rounded-full px-3 py-1 text-[10px] font-mono tracking-wider text-neutral-300 uppercase">
                         {categoryLabel}
                       </span>
                       
-                      <div className={`absolute inset-0 ${projectId === 'scholarhub' && [1, 2, 10].includes(index) ? 'bg-neutral-950/10 group-hover:bg-transparent' : (['scholarhub', 'warungify'].includes(projectId) ? 'bg-transparent' : 'bg-neutral-950/10 group-hover:bg-transparent')} transition-colors duration-500 z-10`} />
+                      <div className={`absolute inset-0 ${projectId === 'scholarhub' && [1, 2, 9].includes(index) ? 'bg-neutral-950/10 group-hover:bg-transparent' : (['scholarhub', 'warungify'].includes(projectId) ? 'bg-transparent' : 'bg-neutral-950/10 group-hover:bg-transparent')} transition-colors duration-500 z-10`} />
                       
                       <img
                         src={item.image}
