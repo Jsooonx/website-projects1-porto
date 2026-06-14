@@ -33,7 +33,7 @@ export const projectsData: Project[] = [
     name: 'ScholarHub',
     year: '/2026',
     category: 'Scholarship Directory',
-    background: '/projects/scholarhub/hero.png',
+    background: '/projects/scholarhub/heropage.png',
     colorTheme: '#0019ff', // Royal Blue
     logo: (
       <div className="flex items-center gap-3 text-white">
@@ -53,62 +53,62 @@ export const projectsData: Project[] = [
       {
         title: 'Hero Landing Experience',
         description: 'The editorial landing interface welcoming students to global educational funding with clean Outfit/Lora typography, balanced layout elements, and smooth scrolling via Lenis.',
-        image: '/projects/scholarhub/hero.png'
+        image: '/projects/scholarhub/heropage.png'
       },
       {
         title: 'Dynamic Island Navbar - Search State',
         description: 'The custom, CSS-accelerated navigation bar morphs seamlessly into an inline search input box on query focus with a custom cubic-bezier easing curve.',
-        image: '/projects/scholarhub/dynamicislandnavbarsearch.png'
+        image: '/projects/scholarhub/navbarsearch.png'
       },
       {
         title: 'Dynamic Island Navbar - Menu State',
         description: 'The navbar expands dynamically using ResizeObserver into a full-bleed multi-column directory panel mapping offering countries and flags.',
-        image: '/projects/scholarhub/dynamicislandnavbarmenu.png'
+        image: '/projects/scholarhub/navbarmenu.png'
       },
       {
         title: 'Filter by Offering Countries',
         description: 'Country-oriented directory layout displaying official flags and custom badges to offer visually guided search paths.',
-        image: '/projects/scholarhub/byprovider.png'
+        image: '/projects/scholarhub/providers.png'
       },
       {
         title: 'Academic Level Segmentation',
         description: 'Explicit category segments mapping opportunities to Bachelor, Master, PhD, and Postdoc pathways to filter candidates immediately.',
-        image: '/projects/scholarhub/browsebylevel.png'
+        image: '/projects/scholarhub/levels.png'
       },
       {
         title: 'Curated Editor\'s Picks',
         description: 'Prominent, high-value global scholarship opportunities highlighted on the dashboard to maximize exposure for applicants.',
-        image: '/projects/scholarhub/editorspick.png'
+        image: '/projects/scholarhub/editorpick.png'
       },
       {
         title: 'Structured Scholarship Profiles',
         description: 'Displays detailed benefits, eligibility checkmarks (degree level, experience threshold), and verified links to official portals.',
-        image: '/projects/scholarhub/eachscholarshipdesc.png'
+        image: '/projects/scholarhub/desceachsscholarships.png'
       },
       {
         title: 'Real-time Verification Feed',
         description: 'The latest addition cards showing freshly updated and verified funding opportunities with exact criteria and fields of study.',
-        image: '/projects/scholarhub/latestadditions.png'
+        image: '/projects/scholarhub/latest.png'
       },
       {
         title: 'Unified Search Directory Grid',
         description: 'A comprehensive, search-optimized list displaying metadata for over 56+ active scholarships with integrated URL state filters.',
-        image: '/projects/scholarhub/allscholarships.png'
+        image: '/projects/scholarhub/lists.png'
       },
       {
         title: 'Smart Deadline Reminders',
         description: 'Alert and reminder modules that notify students of upcoming application deadlines, minimizing missed opportunities.',
-        image: '/projects/scholarhub/notify.png'
+        image: '/projects/scholarhub/notification.png'
       },
       {
         title: 'Outreach Subscription Module',
         description: 'An elegant call-to-action block designed to capture candidate interest and send automated weekly funding alerts.',
-        image: '/projects/scholarhub/dontmissout.png'
+        image: '/projects/scholarhub/76scholarships.png'
       },
       {
         title: 'Editorial Site Footer',
         description: 'A dark, high-contrast footer containing structured site navigation links, social links, and official brand credentials.',
-        image: '/projects/scholarhub/footer.png'
+        image: '/projects/scholarhub/footers.png'
       }
     ]
   },
