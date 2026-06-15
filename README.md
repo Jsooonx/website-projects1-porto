@@ -24,5 +24,5 @@ This is a personal portfolio project. **You may not clone or copy this website v
 - **Jsooonx** - Concept, design system, and full implementation.
 
 ### Additional Credits
-- **Jsooonx** - [https://kanso-dark.framer.media/](https://kanso-dark.framer.media/)
+- **Kanso** - [https://kanso-dark.framer.media/](https://kanso-dark.framer.media/)
 - **Fabrica Studio** - [https://fabrica.framer.media/?utm_source=framer](https://fabrica.framer.media/?utm_source=framer)
