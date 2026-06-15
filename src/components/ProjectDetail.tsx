@@ -295,7 +295,7 @@ export const ProjectDetail: React.FC<ProjectDetailProps> = ({ projectId, onBack 
                   if (index === 0) categoryLabel = 'Landing Screen';
                   else if (index === 1 || index === 2) categoryLabel = 'Dynamic Island';
                   else if (index === 3 || index === 4) categoryLabel = 'Discovery Modules';
-                  else if (index === 5) categoryLabel = 'Featured Feeds';
+                  else if (index === 5) categoryLabel = 'Application Timeline';
                   else if (index === 6) categoryLabel = 'Detailed Profiles';
                   else if (index === 7) categoryLabel = 'Search Directory';
                   else if (index === 8 || index === 9) categoryLabel = 'User Outreach';

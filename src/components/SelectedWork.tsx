@@ -76,9 +76,9 @@ export const projectsData: Project[] = [
         image: '/projects/scholarhub/levels.png'
       },
       {
-        title: 'Curated Editor\'s Picks',
-        description: 'Prominent, high-value global scholarship opportunities highlighted on the dashboard to maximize exposure for applicants.',
-        image: '/projects/scholarhub/editorpick.png'
+        title: 'Opening Month Timeline',
+        description: 'A dynamic calendar timeline allowing students to discover and track international scholarships based on the exact months they open for applications.',
+        image: '/projects/scholarhub/openin(month).png'
       },
       {
         title: 'Structured Scholarship Profiles',
